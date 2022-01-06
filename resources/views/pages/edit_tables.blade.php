@@ -33,9 +33,9 @@
                     <input type="text" name="address" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" placeholder="{{ __('Address') }}" value="{{$guest->address}}">
                 </div>
 
-                <div class="form-group{{ $errors->has('province') ? ' has-danger' : '' }}">
+                <div id="province" class="form-group{{ $errors->has('province') ? ' has-danger' : '' }}">
                     <label>{{ __('Province') }}</label>
-                    <select class="form-control" name="province">
+                    <select id="input--province" class="form-control" name="province">
                         @foreach ($province as $p)
                             @if($guest->id_province==$p->id)
                                 <option style="color: black" value="{{$p->id}}" selected>{{$p->nama}}</option>
@@ -46,9 +46,9 @@
                     </select>
                 </div>
 
-                <div class="form-group{{ $errors->has('city') ? ' has-danger' : '' }}">
+                <div id="city" class="form-group{{ $errors->has('city') ? ' has-danger' : '' }}">
                     <label>{{ __('City') }}</label>
-                    <select class="form-control" name="city">
+                    <select id="input--city" class="form-control" name="city">
                         @foreach ($city as $c)
                             @if($guest->id_city==$c->id)
                                 <option style="color: black" value="{{$c->id}}" selected>{{$c->nama}}</option>
